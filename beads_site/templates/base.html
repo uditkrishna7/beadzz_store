@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  <!-- ✅ Must be first inside <head> -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %}Beads Store{% endblock %}</title>
+</head>
+<body>
+    <h1><a href="/">Beads Store</a></h1>
+    <h2>Welcome to the Beads Store!</h2>
+    <p>Explore our collection of beautiful beads and accessories.</p>   
+
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

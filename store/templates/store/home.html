@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Home - Beads Store{% endblock %}
+
+{% block content %}
+<h2>All Products</h2>
+<ul>
+    {% for product in products %}
+        <li>
+            <strong>
+                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+            </strong>
+            - ₹{{ product.price }}<br>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" width="150"><br>
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No products found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
